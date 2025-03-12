@@ -14,6 +14,6 @@
         <input type="password" name="password" placeholder="Password" required>
         <button type="submit">Login</button>
     </form>
-    <a href="{{ route('register') }}">Don't have an account? Register</a>
+    <a href="{{ route('register') }}">Don't have an account? Register now</a>
 </body>
 </html>
