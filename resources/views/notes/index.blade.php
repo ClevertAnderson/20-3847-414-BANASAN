@@ -38,17 +38,22 @@
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i> Delete</button>
                             </form>
+                            
                         </td>
                     </tr>
-                @empty
+                    @empty
                     <tr>
                         <td colspan="4">There are no data.</td>
                     </tr>
-                @endforelse
-            </tbody>
-        </table>
-
-        {!! $notes->links() !!}
+                    @endforelse
+                </tbody>
+            </table>
+            <form method="POST" action="{{ route('logout') }}" class="mt-3">
+                @csrf
+                <button type="submit" class="btn btn-danger">Logout</button>
+            </form>
+            
+            {!! $notes->links() !!}
 
     </div>
 </div>
