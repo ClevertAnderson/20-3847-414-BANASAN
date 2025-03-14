@@ -35,16 +35,21 @@ class UserController extends Controller
     {
         return view('auth.login');
     }
-
+    
     public function login(Request $request)
-{
+    {
     $credentials = $request->only('email', 'password');
 
     if (Auth::attempt($credentials)) {
-        return redirect()->route('welcome'); // Redirect to Dashboard
+        return redirect()->route('dashboard'); // Redirect to the welcome page after login
     }
 
     return redirect('/login')->with('error', 'Invalid credentials. Please try again.');
-}
+    }
 
+    public function logout(Request $request)
+    {
+    Auth::logout();
+    return redirect('/login')->with('success', 'You have been logged out.');
+    }
 }
