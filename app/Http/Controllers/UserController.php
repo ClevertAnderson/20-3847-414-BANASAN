@@ -41,7 +41,7 @@ class UserController extends Controller
     $credentials = $request->only('email', 'password');
 
     if (Auth::attempt($credentials)) {
-        return redirect()->route('notes.index'); // Redirect to the welcome page after login
+        return redirect()->route('dashboard'); // Redirect to the welcome page after login
     }
 
     return redirect('/login')->with('error', 'Invalid credentials. Please try again.');
